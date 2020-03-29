@@ -1,4 +1,7 @@
 #THIS IS A MODULE FOR MATH FUNCTIONS
+# A MODULE IS A .py FILE THAT CONTAINS THE FUNCTIONS, CLASSES
+
+#FUNCTION TO ADD ANY NUMBER OF INTEGER VALUES PASSED TO IT
 def Sum(*args):
     '''
     DocString : This Function can take any number of numeric Arguments and return sum of the numbers. If any aplhanumeric value is passed to the function then Exception is raised.
@@ -19,6 +22,7 @@ def Sum(*args):
     return sum(args)
 
 
+#FUNCTION TO MULTIPLY ANY NUMBER OF INTEGER VALUES PASSED TO IT
 def Multiply(*args):
     '''
     DocString : This Function can take any number of numeric Arguments and return Product of the numbers. If any aplhanumeric value is passed to the function then Exception is raised.
@@ -43,7 +47,7 @@ def Multiply(*args):
 
 
 
-
+#FUNCTION TO GET THE SQUARE OF ANY NUMBER OF INTEGER VALUES PASSED TO IT
 def Square(*args):
     '''
     DocString : This Function can take any number of numeric Arguments and return Square of the numbers. If any aplhanumeric value is passed to the function then Exception is raised.
@@ -68,6 +72,7 @@ def Square(*args):
 
 
 
+#FUNCTION TO GET THE SQUARE ROOT OF ANY NUMBER OF INTEGER VALUES PASSED TO IT
 from math import sqrt
 def SquareRoot(*args):
     '''
@@ -92,6 +97,7 @@ def SquareRoot(*args):
     return res
 
 
+#FUNCTION TO GET THE CUBE OF ANY NUMBER OF INTEGER VALUES PASSED TO IT
 def Cube(*args):
     '''
     DocString : This Function can take any number of numeric Arguments and return Cube of the numbers. If any aplhanumeric value is passed to the function then Exception is raised.
