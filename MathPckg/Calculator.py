@@ -10,11 +10,11 @@ RESULT OF CALCULATION IS RETURNED IN LIST FOR MULTI VALUES OUTPUT LIKE SQUARE, S
 
 #WE HAVE CREATED PACKAGE "MathPckg" AND SUBPACKAGE "Functions" INSIDE THIS PACKAGE. FIVE FILES ARE PLACED IN THE SUBPACKAGE NAMELY : Square.py, Cube.py, Sum.py, Multiply.py, SquareRoot.py.
 #THESE FILES ARE MODULES
-from Mathematics.Functions import Sum
-from Mathematics.Functions import Cube
-from Mathematics.Functions import Multiply
-from Mathematics.Functions import SquareRoot
-from Mathematics.Functions import Square
+from MathPckg.Functions import Sum
+from MathPckg.Functions import Cube
+from MathPckg.Functions import Multiply
+from MathPckg.Functions import SquareRoot
+from MathPckg.Functions import Square
 
 
 print("\n********THIS CALCULATOR CAN PERFORM OPERATIONS ON MULTIPLE NUMBERS AT A TIME**********\n")
