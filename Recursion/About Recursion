@@ -1,0 +1,4 @@
+All recursive solutions must satisfy three rules or properties:
+1. A recursive solution must contain a base case.
+2. A recursive solution must contain a recursive case.
+3. A recursive solution must make progress toward the base case.
