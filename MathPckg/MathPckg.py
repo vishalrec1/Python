@@ -1,3 +1,4 @@
+#THIS IS A MODULE FOR MATH FUNCTIONS
 def Sum(*args):
     '''
     DocString : This Function can take any number of numeric Arguments and return sum of the numbers. If any aplhanumeric value is passed to the function then Exception is raised.
