@@ -1,5 +1,6 @@
 from MathPckg import Sum,Multiply,Square,SquareRoot,Cube
-#from Sum import Sum
+#import the Functions from the file(or module) MathPckg.py
+
 print("********THIS CALCULATOR CAN PERFORM OPERATIONS ON MULTIPLE NUMBERS AT A TIME**********\n")
 
 print("Enter the Numbers one by one (press enter after each number). Press 'n' or 'N for exit")
@@ -18,7 +19,7 @@ while(True):
 t_num = tuple(num)
 print(t_num)
 
-#DEFINE DICTIONARY OF OPERATIONS
+#DEFINE DICTIONARY OF FUNCTIONS THAT ARE DEFINED IN MODULE MathPckg.py
 ops = {'A': Sum,'C':Cube,'M':Multiply,'R':SquareRoot,'S':Square}
 
 print("Please select the Calculation option below that you want to do : \n")
@@ -35,15 +36,5 @@ while(True):
             print("Selected Option is : ",o)
             break
 
-res = ops[o](*t_num)
+res = ops[o](*t_num) #PLEASE NOTE THAT WE NEED TO USE * TO "UNPACK" THE TUPLE INTO INDIVIDUAL ARGUMENTS
 print(res)
-
-#print(Sum)
-#print(ops[o])
-
-
-
-#Working
-#res= Sum(*t_num)
-#print(res)
-#ops.get(o)(num)
