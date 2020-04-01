@@ -1,0 +1,23 @@
+#1 assert
+
+Python's assert statement is a debugging aid that tests a condition. If the condition is true, it does nothing and your program just continues to execute. But if the assert condition evaluates to false, it raises an AssertionError exception with an optional error message.
+
+def test(num):
+    assert num > 0
+    print(num)
+
+test(8)
+8
+
+test(0)
+---------------------------------------------------------------------------
+AssertionError                            Traceback (most recent call last)
+<ipython-input-38-9ef624c49652> in <module>
+----> 1 test(0)
+
+<ipython-input-36-d450d757846c> in test(num)
+      1 def test(num):
+----> 2     assert num > 0
+      3     print(num)
+
+AssertionError: 
