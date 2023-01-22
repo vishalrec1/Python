@@ -1,0 +1,22 @@
+steps:
+   - name: python
+      entrypoint: python
+      args: ["-m", "pip", "install", "--upgrade", "pip"]     
+   - name: python
+      entrypoint: python
+      args: ["-m", "pip", "install", "build", "pytest", "google-cloud-bigquery", "--user"]
+   - name: python
+      entrypoint: python
+      args: ["-m", "pytest", "--junitxml=${SHORT_SHA}_test_log.xml"]
+   - name: python
+      entrypoint: python
+      args: ["-m", "build"]
+artifacts:
+    python_packages:
+     - repository: "https://LOCATION-python.pkg.dev/PROJECT-ID/REPOSITORY"
+          paths: ["dist/*"]
+artifacts:
+    objects:
+       location: gs://${_BUCKET_NAME}/
+       paths:
+          - ${SHORT_SHA}_test_log.xml
