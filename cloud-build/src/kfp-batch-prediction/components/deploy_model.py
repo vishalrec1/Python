@@ -5,8 +5,8 @@ from kfp.v2.dsl import component,pipeline,Output,Artifact,Input,Model
 
 CUSTOM_SERVING_CONTAINER  = "us-docker.pkg.dev/vertex-ai/prediction/sklearn-cpu.1-0:latest"
 @component(base_image            = CUSTOM_SERVING_CONTAINER,
-           output_component_file = 'gs://gcp-practice-0123-18jun2023/docker-kfp-test/yaml/deploy_model.yaml'
-           #output_component_file = '/home/jupyter/KFP-json2/yaml/deploy_model.yaml'
+           #output_component_file = 'gs://gcp-practice-0123-18jun2023/docker-kfp-test/yaml/deploy_model.yaml'
+           output_component_file = '/deploy_model.yaml'
           )
 def deploy_model(project_in:str,
                   model_display_name_in : str,
