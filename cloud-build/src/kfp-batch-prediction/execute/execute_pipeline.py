@@ -6,8 +6,8 @@ pipeline_root_path         = 'gs://gcp-practice-0123-18jun2023/test-kfp/kfp/'
 
 mlops_pipeline_job = aiplatform.PipelineJob(display_name    = "model-deployment-pipeline-test-json",
                                             pipeline_root   = pipeline_root_path,
-                                            #template_path   = "gs://gcp-practice-0123-18jun2023/docker-kfp-test/kfp-json/mlopsdeploypipeline-1.json",
-                                            template_path   =  "E:\\Python-code\\vertex ai notes\\json\\mlopsdeploypipeline-1.json"
+                                            template_path   = "gs://gcp-practice-0123-18jun2023/docker-kfp-test/kfp-json/mlopsdeploypipeline-1.json",
+                                            #template_path   =  "E:\\Python-code\\vertex ai notes\\json\\mlopsdeploypipeline-1.json"
                                             project         = PROJECT_ID,
                                             parameter_values={"project_in":PROJECT_ID,
                                                               "endpoint_display_name_in":"mlopsDeployPipeline-1",
