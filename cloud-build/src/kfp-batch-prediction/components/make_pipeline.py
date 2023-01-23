@@ -17,7 +17,7 @@ def mlopsDeployPipeline(project_in:str,
                         bucket_uri_in:str
                        ):
     from create_endpoint import create_endpoint
-    from register_model import register_model
+    from upload_model import register_model
     from deploy_model import deploy_model
     from batch_prediction import batch_prediction
     from loadBigQueryTableFromGCS import loadBigQueryTableFromGCS
