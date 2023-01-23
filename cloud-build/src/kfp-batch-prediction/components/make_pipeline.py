@@ -3,7 +3,7 @@ from kfp.v2 import dsl,compiler
 from kfp.v2.dsl import component,pipeline,Output,Artifact,Input,Model
 
 pipeline_root_path          = 'gs://gcp-practice-0123-18jun2023/docker-kfp-test/kfp-json/'
-@dsl.pipeline(name          = "mlopsDeployPipeline-1",
+@dsl.pipeline(name          = "mlopsdeploypipeline-1",
               pipeline_root = pipeline_root_path
              )
 def mlopsDeployPipeline(project_in:str,
