@@ -22,4 +22,5 @@ mlops_pipeline_job = aiplatform.PipelineJob(display_name    = "model-deployment-
                                             
                                           )
 
-mlops_pipeline_job.submit(service_account='sa-nonprod-corp-1cdh-214e-01@nonprod-corp-1cdh-214e.iam.gserviceaccount.com')
+#mlops_pipeline_job.submit(service_account='sa-nonprod-corp-1cdh-214e-01@nonprod-corp-1cdh-214e.iam.gserviceaccount.com')
+mlops_pipeline_job.submit()
