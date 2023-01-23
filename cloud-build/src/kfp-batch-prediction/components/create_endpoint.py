@@ -2,7 +2,7 @@ import kfp
 from kfp.v2 import dsl,compiler
 from kfp.v2.dsl import component,pipeline,Output,Artifact,Input,Model
 
-CUSTOM_SERVING_CONTAINER  = "us-central1-docker.pkg.dev/nonprod-corp-1cdh-214e/containers/wf_1cdh_notebook:r6"
+CUSTOM_SERVING_CONTAINER  = "us-docker.pkg.dev/vertex-ai/prediction/sklearn-cpu.1-0:latest"
 
 @component(base_image            = CUSTOM_SERVING_CONTAINER,
            #output_component_file = 'gs://gcp-practice-0123-18jun2023/docker-kfp-test/yaml/create_endpoint.yaml'
