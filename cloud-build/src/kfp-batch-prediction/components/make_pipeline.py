@@ -28,6 +28,6 @@ def mlopsDeployPipeline(project_in:str,
 
     deploy_model(project_in,endpoint_display_name_in,model_op.output,endpoint_op.output)
     
-    loadBigQueryTableFromGCS(project_in,'us-central1',bucket_uri_in)
+    loadBigQueryTableFromGCS(project_in,bucket_uri_in)
     
     batch_prediction(project_in,endpoint_display_name_in,model_op.output,bigquery_source_in,bigquery_destination_prefix_in,predictions_format_in,machine_type_in)
