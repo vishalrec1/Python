@@ -2,9 +2,6 @@ steps:
        - name: python:3.6
          args: ["pip", "install", "--upgrade", "pip"]
          args: ["pip", "install", "build", "google-cloud-aiplatform", "google-cloud-bigquery", "google-cloud-storage","kfp","--user"]
-       - name: python
-         args: ["-m", "build"]
-       - name: python
          args: ["python","./compile-pipeline.py"]
        - name: 'gcr.io/cloud-builders/gsutil'
          args: ['cp', '/mlopsdeploypipeline-2.json', 'gs://gcp-practice-0123-18jun2023/docker-kfp-test/kfp-json/']
