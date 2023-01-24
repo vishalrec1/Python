@@ -1,5 +1,5 @@
 steps:
-       - name: python:3.10
+       - name: python:3.6
          args: ["pip", "install", "--upgrade", "pip"]
          args: ["pip", "install", "build", "google-cloud-aiplatform", "google-cloud-bigquery", "google-cloud-storage","kfp","gcsfuse","--user"]
        - name: python
