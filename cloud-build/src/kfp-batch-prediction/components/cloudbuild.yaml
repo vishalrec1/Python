@@ -2,7 +2,9 @@ steps:
        - name: python:3.7
          entrypoint: pip
          args: ["install", "-r", "requirements.txt", "--user"]
+       - name: python:3.7
          args: ["add", "*.py", "/"]
+       - name: python:3.7
          args: ["python", "./compile-pipeline.py"]
        - name: 'gcr.io/cloud-builders/gsutil'
          args: ['cp', '/mlopsdeploypipeline-2.json', 'gs://gcp-practice-0123-18jun2023/docker-kfp-test/kfp-json/']
