@@ -7,7 +7,8 @@ CUSTOM_SERVING_CONTAINER  = "us-docker.pkg.dev/vertex-ai/prediction/sklearn-cpu.
 
 @component(base_image            = CUSTOM_SERVING_CONTAINER,
            #output_component_file = 'gs://gcp-practice-0123-18jun2023/docker-kfp-test/yaml/register_model.yaml'
-           output_component_file = '/register_model.yaml'
+           output_component_file = '/register_model.yaml',
+           packages_to_install   = ['google-cloud-aiplatform']
           )
 def register_model(project_in:str,
                     model_display_name_in : str,
