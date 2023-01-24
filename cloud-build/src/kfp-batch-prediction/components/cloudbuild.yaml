@@ -1,15 +1,11 @@
 steps:
-       - name: python
-          #entrypoint: python
+       - name: python:3
           args: ["-m", "pip", "install", "--upgrade", "pip"]     
-       - name: python
-          #entrypoint: python
+       - name: python:3
           args: ["-m", "pip", "install", "build", "google-cloud-aiplatform", "google-cloud-bigquery", "google-cloud-storage","kfp","gcsfuse","--user"]
        - name: python
-         #entrypoint: python
          args: ["-m", "build"]
        - name: python
-         #entrypoint: python
          args: ["python","./compile-pipeline.py"]
 	 # Upload it into a GCS bucket.    
         - name: 'gcr.io/cloud-builders/gsutil'
