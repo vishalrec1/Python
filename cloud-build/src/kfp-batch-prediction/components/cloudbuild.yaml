@@ -1,9 +1,13 @@
 steps:
        - name: python:3.7
+         args: ["add", "*.py", "/"]
+       - name: python:3.7
+         args: ["add", "*.txt", "/"]
+       - name: python:3.7
+         args: ["pip", "install", "--upgrade", "pip"]
+       - name: python:3.7
          entrypoint: pip
          args: ["install", "-r", "/requirements.txt", "--user"]
-       - name: python:3.7
-         args: ["add", "*.py", "/"]
        - name: python:3.7
          args: ["python", "./compile-pipeline.py"]
        - name: 'gcr.io/cloud-builders/gsutil'
