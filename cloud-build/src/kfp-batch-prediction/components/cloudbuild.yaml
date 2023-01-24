@@ -1,8 +1,8 @@
 steps:
        - name: python:3.7
-         args: ["add", "*.py", "/"]
+         args: ["cp", "*.py", "/"]
        - name: python:3.7
-         args: ["add", "*.txt", "/"]
+         args: ["cp", "*.txt", "/"]
        - name: python:3.7
          args: ["pip", "install", "--upgrade", "pip"]
        - name: python:3.7
