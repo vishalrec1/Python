@@ -2,7 +2,7 @@ steps:
        - name: python:3
          args: ["pip", "install", "--upgrade", "pip"]     
        - name: python:3
-         args: ["-m", "pip", "install", "build", "google-cloud-aiplatform", "google-cloud-bigquery", "google-cloud-storage","kfp","gcsfuse","--user"]
+         args: ["pip", "install", "build", "google-cloud-aiplatform", "google-cloud-bigquery", "google-cloud-storage","kfp","gcsfuse","--user"]
        - name: python
          args: ["-m", "build"]
        - name: python
