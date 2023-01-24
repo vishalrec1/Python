@@ -16,7 +16,7 @@ def loadBigQueryTableFromGCS(project_in:str,
 										schema=[
 											bigquery.SchemaField("longitude",        "FLOAT"),
 											bigquery.SchemaField("latitude",      "FLOAT"),
-											bigquery.SchemaField("housing_median_age",  "IFLOAT"),
+											bigquery.SchemaField("housing_median_age",  "FLOAT"),
 											bigquery.SchemaField("total_rooms",      "FLOAT"),
 											bigquery.SchemaField("total_bedrooms", "FLOAT"),
 											bigquery.SchemaField("population",      "FLOAT"),
