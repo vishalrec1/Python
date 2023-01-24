@@ -1,6 +1,6 @@
 FROM python:3
-ADD *.py /
-COPY requirements.txt /
+ADD *.py ./
+COPY requirements.txt ./
 RUN pip install -r requirements.txt
 CMD ["python","./compile-pipeline.py"]
 FROM gcr.io/cloud-builders/gsutil
