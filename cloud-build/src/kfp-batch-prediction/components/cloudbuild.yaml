@@ -1,7 +1,7 @@
 steps:
        - name: python:3.6
          args: ["pip", "install", "--upgrade", "pip"]
-         args: ["pip", "install", "build", "google-cloud-aiplatform", "google-cloud-bigquery", "google-cloud-storage","kfp","--user"]
+         args: ["pip", "install", "build", "google-cloud-aiplatform", "google-cloud-bigquery", "google-cloud-storage", "kfp", "--user"]
          args: ["add", "*.py", "/"]
          args: ["python", "./compile-pipeline.py"]
        - name: 'gcr.io/cloud-builders/gsutil'
