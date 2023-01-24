@@ -7,7 +7,7 @@ steps:
          args: ["-m", "build"]
        - name: python
          args: ["python","./compile-pipeline.py"]
-	 # Upload it into a GCS bucket.    
+       # Upload it into a GCS bucket.    
         - name: 'gcr.io/cloud-builders/gsutil'
            args: ['cp', '/mlopsdeploypipeline-2.json', 'gs://gcp-practice-0123-18jun2023/docker-kfp-test/kfp-json/']
 artifacts:
