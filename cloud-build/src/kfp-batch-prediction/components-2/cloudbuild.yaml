@@ -1,0 +1,14 @@
+steps:
+       - name: python
+          entrypoint: python
+          args: ["-m", "pip", "install", "--upgrade", "pip"]     
+       - name: python
+          entrypoint: python
+          args: ["-m", "pip", "install", "build", "google-cloud-aiplatform", "google-cloud-bigquery", "google-cloud-storage","kfp","gcsfuse","datetime","--user"]
+       - name: python
+         entrypoint: python
+         args: ["-m", "build"]
+artifacts:
+       python_packages:
+       - repository: "https://us-central1-python.pkg.dev/gcp-pratcice-0123/py-gar-repo-test"
+          paths: ["dist/*"]
