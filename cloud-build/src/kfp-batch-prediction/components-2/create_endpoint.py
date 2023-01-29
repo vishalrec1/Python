@@ -7,6 +7,7 @@ CUSTOM_SERVING_CONTAINER  = "us-docker.pkg.dev/vertex-ai/prediction/sklearn-cpu.
 @component(base_image            = CUSTOM_SERVING_CONTAINER,
            #output_component_file = 'gs://gcp-practice-0123-18jun2023/docker-kfp-test/yaml/create_endpoint.yaml',
            output_component_file = '/create_endpoint.yaml',
+           #output_component_file = 'E:\\Python-code\\VertexAI-MLPipelines\\kfp-components-2\\yaml\\create_endpoint.yaml',
            packages_to_install   = ['google-cloud-aiplatform','protobuf==3.20.3']
           )
 def create_endpoint(endpoint_display_name_in:str, 
