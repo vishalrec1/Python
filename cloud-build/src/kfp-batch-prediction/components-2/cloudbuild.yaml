@@ -1,8 +1,7 @@
 steps:
        - name: python:3.7
-          entrypoint: python
-          args: ["-m", "pip", "install", "--upgrade", "pip"]     
-          args: ["-m", "pip", "install", "build", "google-cloud-aiplatform", "google-cloud-bigquery", "google-cloud-storage","kfp","gcsfuse","datetime","--user"]
+         args: ["-m", "pip", "install", "--upgrade", "pip"]     
+         args: ["-m", "pip", "install", "build", "google-cloud-aiplatform", "google-cloud-bigquery", "google-cloud-storage","kfp","gcsfuse","datetime","--user"]
          args: ["-m", "build"]
 artifacts:
        python_packages:
