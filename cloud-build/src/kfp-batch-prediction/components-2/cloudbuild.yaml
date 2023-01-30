@@ -11,7 +11,7 @@ steps:
   # [END cloudbuild_python_dependencies_yaml]
   
   - name: python:3.7
-    entrypoint: python
+    #entrypoint: python
     args: ["add", "*.py", "/"]
     args: ["python", "./copy_json_to_gcs.py"]
     
