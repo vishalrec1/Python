@@ -23,7 +23,8 @@ steps:
   # [END cloudbuild_python_package_yaml]
 
 
-# Store Python package in Google Artifact Registry 
+# Store Python package in Google Artifact Registry
+artifacts:
   pythonPackages:
     - repository: "https://us-central1-python.pkg.dev/gcp-practice-0123/py-gar-repo-test"
       paths: ["dist/*"]
