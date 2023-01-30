@@ -7,3 +7,44 @@ artifacts:
        python_packages:
        - repository: "https://us-central1-python.pkg.dev/gcp-pratcice-0123/py-gar-repo-test"
           paths: ["dist/*"]
+
+
+
+steps:
+  - name: python:3.7
+    entrypoint: python
+    args: ["-m", "pip", "install", "--upgrade", "pip"]
+
+  # [START cloudbuild_python_dependencies_yaml]
+  # Install dependencies
+  - name: python:3.7
+    entrypoint: python
+    args: ["-m", "pip", "install", "build",  "google-cloud-aiplatform", "google-cloud-bigquery", "google-cloud-storage","kfp","gcsfuse","datetime","--user"]
+  # [END cloudbuild_python_dependencies_yaml]
+  
+  - name: python:3.7
+    entrypoint: python
+    args: ["add", "*.py", "/"]
+    args: ["python", "./compile-pipeline.py"]
+    
+  # [START cloudbuild_python_package_yaml]
+  # Python Build
+  - name: python:3.7
+    entrypoint: python
+    args: ["-m", "build"]
+  # [END cloudbuild_python_package_yaml]
+
+
+# [START cloudbuild_python_logs_yaml]
+# Save test logs to Google Cloud Storage
+artifacts:
+  objects:
+    location: gs://gcp-practice-0123-18jun2023/docker-kfp-test/kfp-json/
+    paths:
+      - ${SHORT_SHA}_test_log.xml
+# [END cloudbuild_python_logs_yaml]
+# Store Python package in Google Artifact Registry 
+  pythonPackages:
+    - repository: "https://us-central1-python.pkg.dev/${PROJECT_ID}/${_ARTIFACT_REGISTRY_PYTHON_REPO}"
+      paths: ["dist/*"]
+# [END cloudbuild_python_yaml]
