@@ -10,11 +10,11 @@ steps:
     waitFor: ['UPGRADE pip']
   - name: python:3.7
     entrypoint: python
-    args: ['compile_pipeline.py']
+    args: ['cloud-build/src/kfp-batch-prediction/components-3/compile_pipeline.py']
     id: 'COMPILE_PIPELINE'
     waitFor: ['INSTALL DEPENDENCIES']
   - name: python:3.7
     entrypoint: python
-    args: ['upload_pipeline_template.py']
+    args: ['cloud-build/src/kfp-batch-prediction/components-3/upload_pipeline_template.py']
     id: 'UPLOAD PIPELINE TEMPLATE'
     waitFor: ['COMPILE_PIPELINE']
