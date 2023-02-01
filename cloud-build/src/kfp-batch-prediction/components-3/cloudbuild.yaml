@@ -5,7 +5,7 @@ steps:
     id: 'UPGRADE pip'
   - name: python:3.7
     entrypoint: pip
-    args: ["install", "-r", "/cloud-build/src/kfp-batch-prediction/components-3/requirements.txt", "--user"]
+    args: ["install", "-r", "cloud-build/src/kfp-batch-prediction/components-3/requirements.txt", "--user"]
     id: 'INSTALL DEPENDENCIES'
     waitFor: ['UPGRADE pip']
   - name: python:3.7
