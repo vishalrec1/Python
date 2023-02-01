@@ -1,14 +1,20 @@
----
 steps:
   - name: python:3.7
     entrypoint: python
-    args:
-      - - compile_pipeline.py
-    id: COMPILE_PIPELINE
+    args: ["-m", "pip", "install", "--upgrade", "pip"]
+    id: 'UPGRADE pip'
+  - name: python:3.7
+    entrypoint: pip
+    args: ["install", "-r", "requirements.txt", "--user"]
+    id: 'INSTALL DEPENDENCIES'
+    waitFor: ['UPGRADE pip']
   - name: python:3.7
     entrypoint: python
-    args:
-      - upload_pipeline_template.py
-    id: UPLOAD PIPELINE TEMPLATE
-    waitFor:
-      - COMPILE_PIPELINE
+    args: ['compile_pipeline.py']
+    id: 'COMPILE_PIPELINE'
+    waitFor: ['INSTALL DEPENDENCIES']
+  - name: python:3.7
+    entrypoint: python
+    args: ['upload_pipeline_template.py']
+    id: 'UPLOAD PIPELINE TEMPLATE'
+    waitFor: ['COMPILE_PIPELINE']
