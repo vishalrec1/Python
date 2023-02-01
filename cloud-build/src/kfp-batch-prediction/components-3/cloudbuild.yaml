@@ -1,9 +1,9 @@
 steps:
-    - name: python:3.7
+    - name: 'python'
         entrypoint: python
         args: ['compile_pipeline.py']
         id: 'COMPILE_PIPELINE'
-    - name: python:3.7
+    - name: 'python'
         entrypoint: python
         args: ['upload_pipeline_template.py']
         id: 'UPLOAD PIPELINE TEMPLATE'
