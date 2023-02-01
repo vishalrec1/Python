@@ -29,39 +29,39 @@ def mlopsDeployPipeline(project_in: str,
     from preprocessBigQueryTable import preprocessBigQueryTable
     from loadScoresFromBigQueryTableToGCS import loadScoresFromBigQueryTableToGCS
     # CREATE ENDPOINT
-    endpoint_op = create_endpoint(endpoint_display_name_in,
-                                  project_in
+    endpoint_op = create_endpoint(endpoint_display_name_in=endpoint_display_name_in,
+                                  project_in=project_in
                                   )
     # REGISTER MODEL TO MODEL REGISTRY
-    model_op = register_model(project_in,
-                              endpoint_display_name_in,
-                              model_gcs_path_in,
-                              serving_container_in
+    model_op = register_model(project_in=project_in,
+                              model_display_name_in=endpoint_display_name_in,
+                              model_gcs_path_in=model_gcs_path_in,
+                              serving_container_in=serving_container_in
                               )
     # DEPLOY MODEL TO ENDPOINT
-    deploy_model(project_in,
-                 endpoint_display_name_in,
-                 model_op.output,
-                 endpoint_op.output
+    deploy_model(project_in=project_in,
+                 model_display_name_in=endpoint_display_name_in,
+                 model_resource_nm_in=model_op.output,
+                 endpoint_in=endpoint_op.output
                  )
     # LOAD SOCRING DATA FROM GCS csv FILE TO BIGQUERY
-    bq_table_id = loadBigQueryTableFromGCS(project_in,
-                                           bucket_uri_in
+    bq_table_id = loadBigQueryTableFromGCS(project_in=project_in,
+                                           bucket_uri_in=bucket_uri_in
                                            )
     # PRE-PROCESS THE BIGQUERY DATA TO REDUCE THE # OF COLUMNS FROM 9 TO 8
-    scoring_data_bq_tbl = preprocessBigQueryTable(
-        project_in, bq_table_id.output)
+    scoring_data_bq_tbl = preprocessBigQueryTable(project_in=project_in,
+                                                  source_bq_table_id_in=bq_table_id.output)
     # PERFORM BATCH PREDICTION
-    score_bq_tbl = batch_prediction(project_in,
-                                    endpoint_display_name_in,
-                                    model_op.output,
-                                    scoring_data_bq_tbl.output,
-                                    bigquery_destination_prefix_in,
-                                    predictions_format_in,
-                                    machine_type_in
+    score_bq_tbl = batch_prediction(project_in=project_in,
+                                    model_display_name_in=endpoint_display_name_in,
+                                    model_resource_nm_in=model_op.output,
+                                    bigquery_source_in=scoring_data_bq_tbl.output,
+                                    bigquery_destination_prefix_in=bigquery_destination_prefix_in,
+                                    predictions_format_in=predictions_format_in,
+                                    machine_type_in=machine_type_in
                                     )
     # LOAD SCORES BACK TO GCS BUCKET IN csv FORMAT
-    loadScoresFromBigQueryTableToGCS(project_in,
-                                     score_bq_tbl.output,
-                                     score_target_bucket_uri_in
+    loadScoresFromBigQueryTableToGCS(project_in=project_in,
+                                     source_bq_table_id_in=score_bq_tbl.output,
+                                     target_bucket_uri_in=score_target_bucket_uri_in
                                      )
