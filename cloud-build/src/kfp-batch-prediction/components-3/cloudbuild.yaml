@@ -3,7 +3,7 @@ steps:
   - name: python:3.7
     entrypoint: python
     args:
-      - /compile_pipeline.py
+      - - compile_pipeline.py
     id: COMPILE_PIPELINE
   - name: python:3.7
     entrypoint: python
