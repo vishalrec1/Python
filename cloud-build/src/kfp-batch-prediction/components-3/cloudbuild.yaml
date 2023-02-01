@@ -1,10 +1,14 @@
+---
 steps:
-    - name: 'python'
-        entrypoint: python
-        args: ['compile_pipeline.py']
-        id: 'COMPILE_PIPELINE'
-    - name: 'python'
-        entrypoint: python
-        args: ['upload_pipeline_template.py']
-        id: 'UPLOAD PIPELINE TEMPLATE'
-        waitFor: ['COMPILE_PIPELINE']
+  - name: python
+    entrypoint: python
+    args:
+      - compile_pipeline.py
+    id: COMPILE_PIPELINE
+  - name: python
+    entrypoint: python
+    args:
+      - upload_pipeline_template.py
+    id: UPLOAD PIPELINE TEMPLATE
+    waitFor:
+      - COMPILE_PIPELINE
