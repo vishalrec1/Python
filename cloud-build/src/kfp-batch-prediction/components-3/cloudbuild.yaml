@@ -1,0 +1,10 @@
+steps:
+    - name:
+        id: 'COMPILE_PIPELINE'
+        entrypoint: python
+        args: ['compile_pipeline.py']
+    - name:
+        id: 'UPLOAD PIPELINE TEMPLATE'
+        entrypoint: python
+        args: ['upload_pipeline_template.py']
+        waitFor: ['COMPILE_PIPELINE']
