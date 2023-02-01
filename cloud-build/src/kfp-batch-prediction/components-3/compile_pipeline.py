@@ -5,5 +5,5 @@ from make_pipeline import mlopsDeployPipeline
 
 #def compile_pipeline():
 compiler.Compiler().compile(pipeline_func=mlopsDeployPipeline,
-                            package_path='cloud-build/src/kfp-batch-prediction/components-3/mlopsdeploypipeline-1-31jan2023.yaml'
+                            package_path='mlopsdeploypipeline-1-31jan2023.yaml'
                             )
